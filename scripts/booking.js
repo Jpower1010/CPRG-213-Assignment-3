@@ -2,34 +2,64 @@
 // useful variables might be: the cost per day, the number of days selected, and elements on the screen that will be clicked or will need to be modified. 
 // Do any of these variables need to be initialized when the page is loaded? 
 // When do they need to be reset or updated?
-let days = ["monday", "tuesday", "wednesday", "thursday", "friday"];
-let daysElement = []
-let daysPressed = []
-let dayCounter = 0
+let dayCounter = 0;
 let element;
-let dailyRate;
+dailyRate = 35;
 let weeklyCost;
+let monday;
+tuesday = false
+wednesday = false
+let thursday = false;
 /********* colour change days of week *********/
 // when the day buttons are clicked, we will apply the "clicked" class to that element, and update any other relevant variables. Then, we can recalculate the total cost.
 // added challenge: don't update the dayCounter if the same day is clicked more than once. hint: .classList.contains() might be helpful here!
-for (let day of days) {
-    daysElement.push(document.getElementById(day))
-}
-for (let element of daysElement) {
-    element.addEventListener("click", dayClicked);
-}
 
-
-function dayClicked() {
-    if (!(element in daysPressed));
-        daysPressed.push(element)
+document.getElementById("monday").addEventListener("click", mondayClicked);
+document.getElementById("tuesday").addEventListener("click", tuesdayClicked);
+document.getElementById("wednesday").addEventListener("click", wednesdayClicked);
+document.getElementById("thursday").addEventListener("click", thursdayClicked);
+document.getElementById("friday").addEventListener("click", fridayClicked);
+function mondayClicked() {
+    if (monday === false);
+        monday = true
         dayCounter += 1
     alert(dayCounter)
-    element.classList.add("clicked");
-    recalculated()
+    document.getElementById("monday").classList.add("clicked");
+    recalculate()
 }
-
-
+function tuesdayClicked() {
+    if (tuesday = false);
+        tuesday = true
+        dayCounter += 1
+    alert(dayCounter)
+    document.getElementById("tuesday").classList.add("clicked");
+    recalculate()
+}
+function wednesdayClicked() {
+    if (wednesday = false);
+        wednesday = true
+        dayCounter += 1
+    alert(dayCounter)
+    document.getElementById("wednesday").classList.add("clicked");
+    recalculate()
+}
+function thursdayClicked() {
+    if (thursday = false)
+        thursday = true
+        dayCounter += 1
+    
+    alert(dayCounter)
+    document.getElementById("thursday").classList.add("clicked");
+    recalculate()
+}
+function fridayClicked() {
+    if (friday = false);
+        friday = true
+        dayCounter += 1
+    alert(dayCounter)
+    document.getElementById("friday").classList.add("clicked");
+    recalculate()
+}
 /********* clear days *********/
 // when the clear-button is clicked, the "clicked" class is removed from all days, any other relevant variables are reset, and the calculated cost is set to 0.
 document.getElementById("clear-button").addEventListener("click", clearClicked);
@@ -74,4 +104,5 @@ function recalculate(){
     weeklyCost = dailyRate * dayCounter
     document.getElementById("calculated-cost").innerHTML = weeklyCost
 }
+
 
