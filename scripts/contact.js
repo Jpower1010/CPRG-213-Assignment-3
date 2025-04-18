@@ -4,5 +4,5 @@
 
 document.getElementById("submit-button").addEventListener("click", submitted);
 function submitted() {
-    document.getElementById("contact-page").innerHTML = "Thank you for your message!"
+    document.getElementById("contact-page").innerHTML = '<p>"Thank you for your message!"</p>'
 }
